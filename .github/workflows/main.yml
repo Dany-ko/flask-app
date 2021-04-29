@@ -35,9 +35,9 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
-          sudo docker pull dany83/flask-app
+          sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb
           sudo docker stop $(sudo docker ps -a -q)
-          sudo docker run --rm -d -p 5000:5000 dany83/flask-app
+          sudo docker run --rm -d -p 5000:5000 ${{ secrets.DOCKER_USERNAME }}/yamdb
  
   tests:
     runs-on: ubuntu-latest
