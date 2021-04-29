@@ -74,7 +74,7 @@ jobs:
           to_whatsapp_no: ${{ secrets.TO_WHATSAPP_NO }}
 
 
-        uses: ishween/main@master
+        uses: main@master
       
       - name : Run
         run: |
